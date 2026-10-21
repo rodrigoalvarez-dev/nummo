@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Database\Factories\RecurrenceFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -11,6 +13,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 #[Table('recurrences')]
 class Recurrence extends Model
 {
+    /** @use HasFactory<RecurrenceFactory> */
+    use HasFactory;
+
     protected function casts(): array
     {
         return [
